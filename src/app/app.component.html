@@ -1,0 +1,11 @@
+<div id="container">
+  <div>
+      <input type="text" class="margin-settings" [value]="converterResult.inputNumber" (keypress)="onKeyPress($event)">
+      <input type="text" class="margin-settings" readonly [value]="converterResult.outputString">
+  </div>
+  <ul id="keyboard" class="margin-settings"> 
+      <li *ngFor="let key of keys; let i = index" class="letter" [ngClass]="{'clearl': i%3==0}">
+        <div (click)="onKeyInput(key)">{{key}}</div>
+      </li>
+  </ul>
+</div>
